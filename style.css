@@ -1,0 +1,165 @@
+/* --- Cài đặt chung --- */
+a, a:visited, a:active {
+    text-decoration: none !important;
+    color: inherit; /* Kế thừa màu từ thẻ cha */
+}
+
+a:hover {
+    text-decoration: none !important;
+    opacity: 0.8; /* Hiệu ứng mờ nhẹ khi di chuột */
+}
+
+/* --- Menu Sidebar Mới --- */
+.sidebar-nav {
+    margin-top: 15px; /* Thêm khoảng cách với các mục ở trên */
+}
+
+.sidebar-item {
+    display: flex;         /* Sử dụng flexbox để căn chỉnh icon và chữ */
+    align-items: center;   /* Căn giữa theo chiều dọc */
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    color: #333;           /* Màu chữ xám đậm */
+    background-color: #394152; /* Nền xám rất nhạt */
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    font-weight: 500;
+    opacity: 1.0; /* Ghi đè hiệu ứng opacity chung */
+}
+
+.sidebar-item:hover {
+    background-color: #e9ecef; /* Màu nền đậm hơn khi di chuột */
+    color: #000000;      /* Chữ đen */
+    opacity: 1.0;
+    border-color: #ced4da;
+}
+
+/* Kiểu cho mục đang được chọn (active) */
+.sidebar-item.active {
+    background-color: #007bff; /* Màu xanh dương nổi bật */
+    color: white;             /* Chữ trắng */
+    border-color: #007bff;    /* Viền cùng màu */
+    font-weight: 600;         /* Chữ đậm hơn */
+}
+.sidebar-item.active:hover {
+    background-color: #0069d9; /* Màu xanh đậm hơn một chút khi di chuột */
+    border-color: #0062cc;
+}
+
+/* --- Giao diện thẻ bài viết (giữ nguyên) --- */
+.article-card {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(126, 126, 126, 0.541);
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 25px;
+    background-color: var(--background-color);
+    overflow: hidden;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.article-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+    text-decoration: none;
+    background-color: var(--hover-color);
+}
+
+.card-image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.article-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover img {
+    transform: scale(1.05);
+}
+
+.article-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    margin-bottom: 10px;
+}
+
+.article-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 80px;
+    margin-bottom: 10px;
+
+    position: relative;   /* hoặc absolute/fixed tùy ngữ cảnh */
+    z-index: 10;          /* cao hơn thẻ đang che nó */
+}
+.article-source {
+    width: 50%;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--secondary-text-color);
+    text-transform: uppercase;
+}
+
+/* Nút quay lại trên trang chi tiết */
+.back-button {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+.back-button a {
+    color: #007bff;
+    font-weight: 500;
+}
+.back-button a:hover {
+    color: #0056b3;
+    opacity: 1.0;
+}
+
+.recommendation-image {
+    width: 120px !important;
+    height: 80px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+.recommendation-container {
+    padding: 10px !important;
+    border-radius: 10px !important;
+    background-color: #f8f9fa !important;
+    margin-bottom: 10px !important;
+    transition: all 0.3s ease !important;
+}
+.recommendation-container:hover {
+    background-color: #f0f2f6 !important;
+    transform: translateY(-2px) !important;
+}
+
+.article-content img,
+.fck_detail img,
+.detail-content img,
+.dt-news__content img {
+    max-width: 220px !important;
+    height: auto !important;
+    display: block;
+    margin: 10px auto 10px auto;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
